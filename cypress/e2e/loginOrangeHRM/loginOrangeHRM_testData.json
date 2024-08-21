@@ -1,0 +1,13 @@
+{
+    "test1" : {
+        "username": "Admin", 
+        "password": "admin123", 
+        "expectedValue": "Dashboard"
+    },
+
+    "test2" : {
+        "username": "Admin", 
+        "password": "123123", 
+        "expectedValue":"Invalid credentials"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "test" : {
+        "username": "huitingh098@gmail.com", 
+        "password": "Test123!", 
+        "expectedValue":"Huiting Huang"
+    }
+}
