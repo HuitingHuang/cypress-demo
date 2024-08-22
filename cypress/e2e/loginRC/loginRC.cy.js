@@ -10,16 +10,22 @@ before(() => {
     });
 });
 
-it("RingCentral Login Test", () => {
-    cy.log('1. Go to the Rincentral app login page');
-    cy.visit("https://login.ringcentral.com/");
-    cy.log('Go to the login page successfully');
+describe('RingCentral Login Test', () => {
     
-    cy.log('2. Enter the username and password and login');
-    loginPage.enterUsername('#credential', testData.test.username);
-    cy.contains('Next').click();
-    loginPage.enterPassword('#password', testData.test.password);
-    loginPage.clickLogin('.btn-primary');
-    cy.contains(testData.test.expectedValue, { timeout: 10000 }).should('be.visible');
-    cy.log("Login into the account successfully");
-} )
+    it("Login with valid username and password", () => {
+        cy.log('1. Go to the Rincentral app login page');
+        cy.visit("https://login.ringcentral.com/");
+        cy.log('Go to the login page successfully');
+        
+        cy.log('2. Enter the username and password and login');
+        loginPage.enterUsername('#credential', testData.test.username);
+        cy.contains('Next').click();
+        loginPage.enterPassword('#password', testData.test.password);
+        loginPage.clickLogin('.btn-primary');
+        cy.contains(testData.test.expectedValue, { timeout: 10000 }).should('be.visible');
+        cy.log("Login into the account successfully");
+    } )
+
+})
+
+
