@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "e2e": "cypress run",
+    "e2e:chrome": "cypress run --browser chrome",
+    "test:ci:record:parallel": "cypress run --record --parallel"
   },
   "keywords": [],
   "author": "",
