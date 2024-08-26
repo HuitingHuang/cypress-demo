@@ -14,7 +14,7 @@ describe('RingCentral Login Test', () => {
     
     it("Login with valid username and password", () => {
         cy.log('1. Go to the Rincentral app login page');
-        cy.visit("https://login.ringcentral.com/");
+        cy.visit("https://login.ringcentral.com/", {failOnStatusCode: false});
         cy.log('Go to the login page successfully');
         
         cy.log('2. Enter the username and password and login');

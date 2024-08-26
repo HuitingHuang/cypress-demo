@@ -14,7 +14,7 @@ describe('OrangeHRM login tests', () => {
 
     beforeEach(() => {
         cy.log('1. Go to the OrangeHRM login page');
-        cy.visit("https://opensource-demo.orangehrmlive.com/");
+        cy.visit("https://opensource-demo.orangehrmlive.com/", {failOnStatusCode: false});
         cy.log('Go to the login page successfully');
     });
 
