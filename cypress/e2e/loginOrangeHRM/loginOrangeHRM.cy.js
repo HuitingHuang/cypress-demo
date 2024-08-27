@@ -10,7 +10,7 @@ before(() => {
     })
 });
 
-describe('OrangeHRM login tests', () => {
+describe('OrangeHRM login tests', { tags: ['@login', '@loginOHRM'] }, () => {
 
     beforeEach(() => {
         cy.log('1. Go to the OrangeHRM login page');
@@ -18,7 +18,7 @@ describe('OrangeHRM login tests', () => {
         cy.log('Go to the login page successfully');
     });
 
-    it("Login with valid username and password", () => {
+    it("Login with valid username and password", { tags: '@loginOHRM-normal' }, () => {
         cy.log('2. Enter the username and password and login');
         loginPage.enterUsername('[name="username"]', testData.test1.username);
         loginPage.enterPassword('[name="password"]', testData.test1.password);
@@ -27,7 +27,7 @@ describe('OrangeHRM login tests', () => {
         cy.log("Login into the account successfully");
     } );
 
-    it("Login with valid username and invalid password", () => {
+    it("Login with valid username and invalid password", { tags: '@loginOHRM-error' }, () => {
         cy.log('2. Enter the username and password and login');
         loginPage.enterUsername('[name="username"]', testData.test2.username);
         loginPage.enterPassword('[name="password"]', testData.test2.password);

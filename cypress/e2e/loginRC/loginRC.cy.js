@@ -10,9 +10,9 @@ before(() => {
     });
 });
 
-describe('RingCentral Login Test', () => {
+describe('RingCentral Login Test', { tags: ['@login', '@loginRC'] }, () => {
     
-    it("Login with valid username and password", () => {
+    it("Login with valid username and password", { tags: '@loginRC-normal' }, () => {
         cy.log('1. Go to the Rincentral app login page');
         cy.visit("https://login.ringcentral.com/", {failOnStatusCode: false});
         cy.log('Go to the login page successfully');
