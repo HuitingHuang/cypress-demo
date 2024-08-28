@@ -5,7 +5,7 @@ This project is used for practicing Cypress E2E testing.
 The test scripts are located in <code>cypress/e2e</code>
 
 To run the tests: <br>
-<code>npm run test</code>
+<code>npm run e2e</code>
 
 The report of test results will be shown as <code>index.html</code> in <code>cypress/reports</code>
 
