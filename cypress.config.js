@@ -15,13 +15,13 @@ module.exports = defineConfig({
   e2e: {
     watchForFileChanges: false,
     defaultCommandTimeout: 5000,
-    specPattern: process.env.SPEC_FILES.length > 0 ? process.env.SPEC_FILES.split(',') : undefined,
+    specPattern: process.env.SPEC_FILES && process.env.SPEC_FILES.length > 0 ? process.env.SPEC_FILES.split(',') : undefined,
     retries: {
       runMode: 2,   
       openMode: 0,  
     },
     env: {
-      "grepTags": process.env.TAGS.length > 0 ? process.env.TAGS : undefined,
+      "grepTags": process.env.TAGS && process.env.TAGS.length > 0 ? process.env.TAGS : undefined,
       "grepFilterSpecs": true
     },
     setupNodeEvents(on, config) {
