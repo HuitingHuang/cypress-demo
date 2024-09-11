@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
-import { LoginPage } from "../pages/loginPage";
+import { LoginPageOrangeHRM } from "../pages/loginPageOrangeHRM";
 
-const loginPage = new LoginPage();
+const loginPage = new LoginPageOrangeHRM();
 let testData = {};
 
 before(() => {
@@ -20,18 +20,14 @@ describe('OrangeHRM login tests', { tags: ['@login', '@loginOHRM'] }, () => {
 
     it("Login with valid username and password", { tags: '@loginOHRM-normal' }, () => {
         cy.log('2. Enter the username and password and login');
-        loginPage.enterUsername('[name="username"]', testData.test1.username);
-        loginPage.enterPassword('[name="password"]', testData.test1.password);
-        loginPage.clickLogin('.oxd-button');
+        loginPage.login(testData.test1.username, testData.test1.password);
         cy.contains(testData.test1.expectedValue, { timeout: 10000 }).should('be.visible');
         cy.log("Login into the account successfully");
     } );
 
     it("Login with valid username and invalid password", { tags: '@loginOHRM-error' }, () => {
         cy.log('2. Enter the username and password and login');
-        loginPage.enterUsername('[name="username"]', testData.test2.username);
-        loginPage.enterPassword('[name="password"]', testData.test2.password);
-        loginPage.clickLogin('.oxd-button');
+        loginPage.login(testData.test2.username, testData.test2.password);
         cy.contains(testData.test2.expectedValue, { timeout: 10000 }).should('be.visible');
         cy.log("The error message shows successfully");
     } )
